@@ -18,7 +18,7 @@ namespace MovieAPI.Models
 
         //Navigation property
         //[JsonIgnore]
-        //public Movie Movie{ get; set; } = null!;
+        //public Movies Movies{ get; set; } = null!;
 
     }
 }

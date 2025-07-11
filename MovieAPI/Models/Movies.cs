@@ -25,7 +25,7 @@ namespace MovieAPI.Models
         //Navigation in both without FK => Mapping required
 
         //Navigation property
-        MovieDetails MovieDetails { get; set; }
+        public MovieDetails MovieDetails { get; set; }
 
         
     }
