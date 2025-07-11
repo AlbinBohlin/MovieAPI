@@ -5,6 +5,7 @@ using MovieAPI.Data;
 
 
 
+
 namespace MovieAPI
 {
     public class Program
@@ -12,6 +13,8 @@ namespace MovieAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<MovieAPIContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("MovieAPIContext") ?? throw new InvalidOperationException("Connection string 'MovieAPIContext' not found.")));
             
             
 
