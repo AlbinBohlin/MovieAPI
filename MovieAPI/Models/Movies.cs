@@ -2,7 +2,7 @@
 
 namespace MovieAPI.Models
 {
-    public class Movie
+    public class Movies
     {
         public int Id{ get; set; }
         public int Year { get; set; }
