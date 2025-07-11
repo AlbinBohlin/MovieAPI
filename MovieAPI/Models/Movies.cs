@@ -10,13 +10,17 @@ namespace MovieAPI.Models
         public string Genre { get; set; }
         public TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(Random.Shared.Next(80,240));
 
-       /* public List<Review> Reviews { get; set; } = [];
+        /* public List<Review> Reviews { get; set; } = [];
 
-        public List<Actor> Actors { get; set; } = [];
+         public List<Actor> Actors { get; set; } = [];
 
-        //Navigation property
-        public MovieDetails MovieDetails { get; set; } = null!;*/
 
+
+         //Navigation property
+         public MovieDetails MovieDetails { get; set; } = null!;*/
+
+        //Foreign Key
+        //public int MovieDetails { get; set; }
 
     }
 }
