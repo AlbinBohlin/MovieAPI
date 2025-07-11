@@ -12,47 +12,47 @@ namespace MovieAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MoviesController : ControllerBase
+    public class ReviewsController : ControllerBase
     {
         private readonly MovieAPIContext _context;
 
-        public MoviesController(MovieAPIContext context)
+        public ReviewsController(MovieAPIContext context)
         {
             _context = context;
         }
 
-        // GET: api/Movies
+        // GET: api/Reviews
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Movies>>> GetMovies()
+        public async Task<ActionResult<IEnumerable<Review>>> GetReview()
         {
-            return await _context.Movies.ToListAsync();
+            return await _context.Review.ToListAsync();
         }
 
-        // GET: api/Movies/5
+        // GET: api/Reviews/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movies>> GetMovies(int id)
+        public async Task<ActionResult<Review>> GetReview(int id)
         {
-            var movies = await _context.Movies.FindAsync(id);
+            var review = await _context.Review.FindAsync(id);
 
-            if (movies == null)
+            if (review == null)
             {
                 return NotFound();
             }
 
-            return movies;
+            return review;
         }
 
-        // PUT: api/Movies/5
+        // PUT: api/Reviews/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMovies(int id, Movies movies)
+        public async Task<IActionResult> PutReview(int id, Review review)
         {
-            if (id != movies.MoviesId)
+            if (id != review.ReviewId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(movies).State = EntityState.Modified;
+            _context.Entry(review).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace MovieAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MoviesExists(id))
+                if (!ReviewExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace MovieAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Movies
+        // POST: api/Reviews
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Movies>> PostMovies(Movies movies)
+        public async Task<ActionResult<Review>> PostReview(Review review)
         {
-            _context.Movies.Add(movies);
+            _context.Review.Add(review);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovies", new { id = movies.MoviesId }, movies);
+            return CreatedAtAction("GetReview", new { id = review.ReviewId }, review);
         }
 
-        // DELETE: api/Movies/5
+        // DELETE: api/Reviews/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMovies(int id)
+        public async Task<IActionResult> DeleteReview(int id)
         {
-            var movies = await _context.Movies.FindAsync(id);
-            if (movies == null)
+            var review = await _context.Review.FindAsync(id);
+            if (review == null)
             {
                 return NotFound();
             }
 
-            _context.Movies.Remove(movies);
+            _context.Review.Remove(review);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool MoviesExists(int id)
+        private bool ReviewExists(int id)
         {
-            return _context.Movies.Any(e => e.MoviesId == id);
+            return _context.Review.Any(e => e.ReviewId == id);
         }
     }
 }

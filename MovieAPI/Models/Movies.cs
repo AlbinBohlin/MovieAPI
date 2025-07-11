@@ -4,7 +4,7 @@ namespace MovieAPI.Models
 {
     public class Movies
     {
-        public int Id{ get; set; }
+        public int MoviesId{ get; set; }
         public int Year { get; set; }
         public string Title { get; set; } = "Titl";
         public string Genre { get; set; } = "Genr";
