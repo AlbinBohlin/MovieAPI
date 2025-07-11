@@ -9,9 +9,9 @@ namespace MovieAPI.Models
         
 
         public int      Id{ get; set; }
-        public int Budget { get; set; } = 123;
-        public string Synopsis { get; set; } = $"Synopsis...";
-        public string Language { get; set; } = "xxx...";
+        public int      Budget { get; set; }
+        public string   Synopsis { get; set; }
+        public  string  Language { get; set; }
 
         //ForeignKey
         public int MovieID { get; set; }
