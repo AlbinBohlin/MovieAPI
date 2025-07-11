@@ -1,6 +1,5 @@
 ﻿
 
-using Bogus.DataSets;
 
 namespace MovieAPI.Models
 {

@@ -14,7 +14,7 @@ namespace MovieAPI.Models
         public  string  Language { get; set; }
 
         //ForeignKey
-        public int MovieID { get; set; }
+        public int MoviesID { get; set; }
 
         //Navigation property
         //[JsonIgnore]

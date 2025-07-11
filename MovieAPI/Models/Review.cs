@@ -8,6 +8,7 @@
         public int Rating { get; set; } = Random.Shared.Next(1,6);
         public string Comment { get; set; }
 
+        public int MoviesId { get; set; }
 
     }
 }
